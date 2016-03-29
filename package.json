@@ -1,6 +1,6 @@
 {
   "name": "ember-pod-states-resolver",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Extends default ember-resolver to support loading and error state as nested routes",
   "directories": {
     "doc": "doc",
