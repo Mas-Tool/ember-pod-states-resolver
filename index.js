@@ -2,5 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-pod-states-resolver'
+  name: 'ember-pod-states-resolver',
+  included: function(app) {
+    debugger;
+  }
 };

@@ -1,7 +1,7 @@
 {
   "name": "ember-pod-states-resolver",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Extends default ember-resolver to support loading and error state as nested routes",
   "directories": {
     "doc": "doc",
     "test": "tests"
