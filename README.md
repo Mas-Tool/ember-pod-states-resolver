@@ -1,26 +1,46 @@
 # Ember-pod-states-resolver
 
-This README outlines the details of collaborating on this Ember addon.
+Extends default ember-resolver to support loading and error state as nested routes.
+## What is Ember-pod-state-resolver?
+Say you have a pod structured route named 'contacts' with loading and error state templates.
+##### The default ember-resolver will look for the following structure
+```
+app/
+app/contacts
+app/contacts/route.js
+app/contacts/template.hbs
+app/contacts-loading/template.hbs
+app/contacts-error/template.hbs
+```
+##### After installing the ember-pod-state-resolver you can have it structured like this:
+```
+app/
+app/contacts
+app/contacts/route.js
+app/contacts/template.hbs
+app/contacts/loading/template.hbs  <- nested template
+app/contacts/error/template.hbs    <- nested template
+```
+## Custom prefix
+You can set a custom prefix for the loading and error state folder by setting:
+```
+//your app.js file
 
+Resolver.reopen({'podStatePrefix':'_'}); <- prefix
+
+App = Ember.Application.extend({
+  modulePrefix: config.modulePrefix,
+  podModulePrefix: config.podModulePrefix,
+  Resolver
+});
+```
+The loading and error state templates can now be located at:
+```
+app/contacts/_loading/template.hbs  <- underscore prefix
+app/contacts/_error/template.hbs    <- underscore prefix
+```
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+##### Install ember-pod-state-resolver
 
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+* `ember install ember-pod-state-resolver`
