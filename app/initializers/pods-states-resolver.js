@@ -20,14 +20,19 @@ Resolver.reopen({
   podStateResolver(parsedName) {
     var subStates=['loading','error'];
     var result;
+    if(parsedName.type !== 'template') return;
+    
     subStates.forEach((substate)=>{
-      if (parsedName.type === 'template' && parsedName.name.endsWith('-' + substate)) {
+      if (this._endsWith(parsedName.name,'-' + substate)) {
         var templateRoute = parsedName.fullNameWithoutType.substring(0,parsedName.fullNameWithoutType.length - substate.length -1); // remove -loading or -error endings
         var prefix = this.get('podStatePrefix') || '';
         result = parsedName.prefix + '/' + templateRoute + "/" + prefix + substate + "/template";
       }
     });
     return result;
+  },
+  _endsWith(str,suffix){
+    return str.indexOf(suffix, this.length - suffix.length) !== -1;
   }
 });
 
