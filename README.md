@@ -1,7 +1,7 @@
 # Ember-pod-states-resolver
 
 Extends default ember-resolver to support loading and error state as nested routes.
-## What is Ember-pod-state-resolver?
+## What is Ember-pod-states-resolver?
 Say you have a pod structured route named 'contacts' with loading and error state templates.
 ##### The default ember-resolver will look for the following structure
 ```
@@ -12,7 +12,7 @@ app/contacts/template.hbs
 app/contacts-loading/template.hbs
 app/contacts-error/template.hbs
 ```
-##### After installing the ember-pod-state-resolver you can have it structured like this:
+##### After installing the ember-pod-states-resolver you can have it structured like this:
 ```
 app/
 app/contacts
@@ -41,6 +41,6 @@ app/contacts/_error/template.hbs    <- underscore prefix
 ```
 ## Installation
 
-##### Install ember-pod-state-resolver
+##### Install ember-pod-states-resolver
 
-* `ember install ember-pod-state-resolver`
+* `ember install ember-pod-states-resolver`
